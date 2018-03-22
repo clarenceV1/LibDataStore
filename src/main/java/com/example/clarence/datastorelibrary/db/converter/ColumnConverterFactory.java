@@ -2,7 +2,6 @@ package com.example.clarence.datastorelibrary.db.converter;
 
 
 import com.example.clarence.datastorelibrary.db.sqlite.ColumnDbType;
-import com.example.clarence.utillibrary.LogUtils;
 
 import java.util.Date;
 import java.util.concurrent.ConcurrentHashMap;
@@ -25,7 +24,7 @@ public final class ColumnConverterFactory {
                 }
                 result = columnConverter;
             } catch (Throwable ex) {
-                LogUtils.e(tag,ex.getMessage());
+                ex.printStackTrace();
             }
         }
 

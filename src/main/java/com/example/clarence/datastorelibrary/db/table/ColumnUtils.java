@@ -4,7 +4,6 @@ package com.example.clarence.datastorelibrary.db.table;
 
 import com.example.clarence.datastorelibrary.db.converter.ColumnConverter;
 import com.example.clarence.datastorelibrary.db.converter.ColumnConverterFactory;
-import com.example.clarence.utillibrary.LogUtils;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -69,7 +68,7 @@ public final class ColumnUtils {
             try {
                 getMethod = entityType.getDeclaredMethod(methodName);
             } catch (NoSuchMethodException e) {
-                LogUtils.d(tag, entityType.getName() + "#" + methodName + " not exist");
+                e.printStackTrace();
             }
         }
 
@@ -94,7 +93,7 @@ public final class ColumnUtils {
             try {
                 setMethod = entityType.getDeclaredMethod(methodName, fieldType);
             } catch (NoSuchMethodException e) {
-                LogUtils.d(tag, entityType.getName() + "#" + methodName + " not exist");
+                e.printStackTrace();
             }
         }
 
@@ -114,7 +113,7 @@ public final class ColumnUtils {
         try {
             return entityType.getDeclaredMethod(methodName);
         } catch (NoSuchMethodException e) {
-            LogUtils.d(tag, entityType.getName() + "#" + methodName + " not exist");
+            e.printStackTrace();
         }
         return null;
     }
@@ -129,7 +128,7 @@ public final class ColumnUtils {
         try {
             return entityType.getDeclaredMethod(methodName, fieldType);
         } catch (NoSuchMethodException e) {
-            LogUtils.d(tag, entityType.getName() + "#" + methodName + " not exist");
+            e.printStackTrace();
         }
         return null;
     }

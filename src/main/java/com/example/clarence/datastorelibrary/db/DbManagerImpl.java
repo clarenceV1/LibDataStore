@@ -15,7 +15,6 @@ import com.example.clarence.datastorelibrary.db.table.ColumnEntity;
 import com.example.clarence.datastorelibrary.db.table.DbBase;
 import com.example.clarence.datastorelibrary.db.table.DbModel;
 import com.example.clarence.datastorelibrary.db.table.TableEntity;
-import com.example.clarence.utillibrary.LogUtils;
 
 import java.io.File;
 import java.io.IOException;
@@ -72,7 +71,7 @@ public final class DbManagerImpl extends DbBase {
                     try {
                         dao.dropDb();
                     } catch (DbException e) {
-                        LogUtils.e(tag, e.getMessage());
+                        e.printStackTrace();
                     }
                 }
             }
@@ -491,7 +490,7 @@ public final class DbManagerImpl extends DbBase {
                 try {
                     statement.releaseReference();
                 } catch (Throwable ex) {
-                    LogUtils.e(tag, ex.getMessage());
+                    ex.printStackTrace();
                 }
             }
         }
@@ -511,7 +510,7 @@ public final class DbManagerImpl extends DbBase {
                 try {
                     statement.releaseReference();
                 } catch (Throwable ex) {
-                    LogUtils.e(tag, ex.getMessage());
+                    ex.printStackTrace();
                 }
             }
         }
@@ -530,7 +529,7 @@ public final class DbManagerImpl extends DbBase {
                 try {
                     statement.releaseReference();
                 } catch (Throwable ex) {
-                    LogUtils.e(tag, ex.getMessage());
+                    ex.printStackTrace();
                 }
             }
         }

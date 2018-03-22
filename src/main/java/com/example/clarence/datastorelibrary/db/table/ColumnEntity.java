@@ -7,7 +7,6 @@ import com.example.clarence.datastorelibrary.db.annotation.Column;
 import com.example.clarence.datastorelibrary.db.converter.ColumnConverter;
 import com.example.clarence.datastorelibrary.db.converter.ColumnConverterFactory;
 import com.example.clarence.datastorelibrary.db.sqlite.ColumnDbType;
-import com.example.clarence.utillibrary.LogUtils;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -56,13 +55,13 @@ public final class ColumnEntity {
             try {
                 setMethod.invoke(entity, value);
             } catch (Throwable e) {
-                LogUtils.e(tag,e.getMessage());
+               e.printStackTrace();
             }
         } else {
             try {
                 this.columnField.set(entity, value);
             } catch (Throwable e) {
-                LogUtils.e(tag,e.getMessage());
+                e.printStackTrace();
             }
         }
     }
@@ -86,13 +85,13 @@ public final class ColumnEntity {
             try {
                 setMethod.invoke(entity, idValue);
             } catch (Throwable e) {
-                LogUtils.e(tag,e.getMessage());
+                e.printStackTrace();
             }
         } else {
             try {
                 this.columnField.set(entity, idValue);
             } catch (Throwable e) {
-                LogUtils.e(tag,e.getMessage());
+                e.printStackTrace();
             }
         }
     }
@@ -104,13 +103,13 @@ public final class ColumnEntity {
                 try {
                     fieldValue = getMethod.invoke(entity);
                 } catch (Throwable e) {
-                    LogUtils.e(tag,e.getMessage());
+                    e.printStackTrace();
                 }
             } else {
                 try {
                     fieldValue = this.columnField.get(entity);
                 } catch (Throwable e) {
-                    LogUtils.e(tag,e.getMessage());
+                    e.printStackTrace();
                 }
             }
         }

@@ -8,7 +8,6 @@ import com.example.clarence.datastorelibrary.db.DbManager;
 import com.example.clarence.datastorelibrary.db.IOUtil;
 import com.example.clarence.datastorelibrary.db.sqlite.SqlInfo;
 import com.example.clarence.datastorelibrary.db.sqlite.SqlInfoBuilder;
-import com.example.clarence.utillibrary.LogUtils;
 
 import java.util.HashMap;
 
@@ -53,7 +52,7 @@ public abstract class DbBase implements DbManager {
                         String tableName = cursor.getString(0);
                         execNonQuery("DROP TABLE " + tableName);
                     } catch (Throwable e) {
-                        LogUtils.e(tag, e.getMessage());
+                        e.printStackTrace();
                     }
                 }
 

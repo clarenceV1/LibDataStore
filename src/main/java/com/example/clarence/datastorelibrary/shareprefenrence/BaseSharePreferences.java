@@ -1,11 +1,10 @@
 package com.example.clarence.datastorelibrary.shareprefenrence;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.text.TextUtils;
-
-import com.example.clarence.utillibrary.LogUtils;
 
 import java.io.File;
 
@@ -42,6 +41,7 @@ import java.io.File;
     /**
      * 获取SharedPreferences根据指定的SharedPreferences Name
      */
+    @SuppressLint("WrongConstant")
     public SharedPreferences loadSP(String newSp) {
         String spName = newSp;
         if (TextUtils.isEmpty(spName)) {
@@ -51,7 +51,7 @@ import java.io.File;
             int sdkLevel = Build.VERSION.SDK_INT;
             return context.getSharedPreferences(spName, (sdkLevel > 8) ? 4 : 0);
         } catch (Exception e) {
-            LogUtils.e(sTAG, e.getMessage());
+            e.printStackTrace();
             return null;
         }
     }

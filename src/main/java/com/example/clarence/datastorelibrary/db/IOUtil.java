@@ -3,8 +3,6 @@ package com.example.clarence.datastorelibrary.db;
 import android.database.Cursor;
 import android.text.TextUtils;
 
-import com.example.clarence.utillibrary.LogUtils;
-
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.ByteArrayOutputStream;
@@ -29,7 +27,7 @@ public class IOUtil {
             try {
                 closeable.close();
             } catch (Throwable ignored) {
-                LogUtils.d(tag, ignored.getMessage());
+               ignored.printStackTrace();
             }
         }
     }
@@ -39,7 +37,7 @@ public class IOUtil {
             try {
                 cursor.close();
             } catch (Throwable ignored) {
-                LogUtils.d(tag,ignored.getMessage());
+                ignored.printStackTrace();
             }
         }
     }

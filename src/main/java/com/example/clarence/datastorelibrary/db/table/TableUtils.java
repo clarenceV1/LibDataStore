@@ -3,7 +3,6 @@ package com.example.clarence.datastorelibrary.db.table;
 
 import com.example.clarence.datastorelibrary.db.annotation.Column;
 import com.example.clarence.datastorelibrary.db.converter.ColumnConverterFactory;
-import com.example.clarence.utillibrary.LogUtils;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
@@ -46,7 +45,7 @@ final class TableUtils {
 
             addColumns2Map(entityType.getSuperclass(), columnMap);
         } catch (Throwable e) {
-            LogUtils.e(tag, e.getMessage());
+            e.printStackTrace();
         }
     }
 }
