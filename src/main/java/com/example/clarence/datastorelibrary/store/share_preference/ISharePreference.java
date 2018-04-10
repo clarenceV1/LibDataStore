@@ -1,10 +1,10 @@
-package com.example.clarence.datastorelibrary.store.base;
+package com.example.clarence.datastorelibrary.store.share_preference;
 
 /**
- * Created by clarence on 2018/1/23.
+ * Created by clarence on 2018/4/9.
  */
 
-public interface IStore {
+public interface ISharePreference {
     int read(String key, int defaultValue);
 
     float read(String key, float defaultValue);
@@ -24,4 +24,5 @@ public interface IStore {
     boolean write(String key, boolean vaule);
 
     boolean write(String key, String vaule);
+
 }
